@@ -7,7 +7,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Directory to store the JSON files
-WEBHOOK_DIR = "webhooks"
+WEBHOOK_DIR = "/tmp/webhooks"
 
 # Create the directory if it doesn't exist
 if not os.path.exists(WEBHOOK_DIR):
