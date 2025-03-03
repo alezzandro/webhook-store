@@ -1,0 +1,160 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeDaemonSetRolloutStuck",
+                "container": "kube-rbac-proxy-main",
+                "daemonset": "ovnkube-node",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-ovn-kubernetes",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "DaemonSet openshift-ovn-kubernetes/ovnkube-node has not finished or progressed for at least 30 minutes.",
+                "summary": "DaemonSet rollout is stuck."
+            },
+            "startsAt": "2025-02-28T12:33:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28%28kube_daemonset_status_current_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+or+%28kube_daemonset_status_number_misscheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+0%29+or+%28kube_daemonset_status_updated_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+or+%28kube_daemonset_status_number_available%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29%29+and+%28changes%28kube_daemonset_status_updated_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B5m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "c668fea2d1b22a27"
+        },
+        {
+            "status": "resolved",
+            "labels": {
+                "alertname": "OVNKubernetesResourceRetryFailure",
+                "container": "kube-rbac-proxy-node",
+                "endpoint": "metrics",
+                "instance": "10.0.0.4:9103",
+                "job": "ovnkube-node",
+                "namespace": "openshift-ovn-kubernetes",
+                "openshift_io_alert_source": "platform",
+                "pod": "ovnkube-node-j742w",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "ovn-kubernetes-node",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "OVN Kubernetes failed to apply networking control plane configuration after several attempts. This might be because the configuration\nprovided by the user is invalid or because of an internal error. As a consequence, the cluster might have a degraded status.\n",
+                "summary": "OVN Kubernetes failed to apply networking control plane configuration."
+            },
+            "startsAt": "2025-02-28T12:13:12.448Z",
+            "endsAt": "2025-02-28T12:25:42.448Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=increase%28ovnkube_resource_retry_failures_total%5B10m%5D%29+%3E+0&g0.tab=1",
+            "fingerprint": "fc2959321a933258"
+        },
+        {
+            "status": "resolved",
+            "labels": {
+                "alertname": "OVNKubernetesResourceRetryFailure",
+                "container": "kube-rbac-proxy-node",
+                "endpoint": "metrics",
+                "instance": "10.0.0.5:9103",
+                "job": "ovnkube-node",
+                "namespace": "openshift-ovn-kubernetes",
+                "openshift_io_alert_source": "platform",
+                "pod": "ovnkube-node-p5fh7",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "ovn-kubernetes-node",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "OVN Kubernetes failed to apply networking control plane configuration after several attempts. This might be because the configuration\nprovided by the user is invalid or because of an internal error. As a consequence, the cluster might have a degraded status.\n",
+                "summary": "OVN Kubernetes failed to apply networking control plane configuration."
+            },
+            "startsAt": "2025-02-28T12:13:12.448Z",
+            "endsAt": "2025-02-28T12:25:42.448Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=increase%28ovnkube_resource_retry_failures_total%5B10m%5D%29+%3E+0&g0.tab=1",
+            "fingerprint": "eb88ac85687eddf5"
+        },
+        {
+            "status": "resolved",
+            "labels": {
+                "alertname": "OVNKubernetesResourceRetryFailure",
+                "container": "kube-rbac-proxy-node",
+                "endpoint": "metrics",
+                "instance": "10.0.128.3:9103",
+                "job": "ovnkube-node",
+                "namespace": "openshift-ovn-kubernetes",
+                "openshift_io_alert_source": "platform",
+                "pod": "ovnkube-node-txrl9",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "ovn-kubernetes-node",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "OVN Kubernetes failed to apply networking control plane configuration after several attempts. This might be because the configuration\nprovided by the user is invalid or because of an internal error. As a consequence, the cluster might have a degraded status.\n",
+                "summary": "OVN Kubernetes failed to apply networking control plane configuration."
+            },
+            "startsAt": "2025-02-28T12:12:42.448Z",
+            "endsAt": "2025-02-28T12:25:12.448Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=increase%28ovnkube_resource_retry_failures_total%5B10m%5D%29+%3E+0&g0.tab=1",
+            "fingerprint": "1ce3a058e4b2a3d3"
+        },
+        {
+            "status": "resolved",
+            "labels": {
+                "alertname": "OVNKubernetesResourceRetryFailure",
+                "container": "kube-rbac-proxy-node",
+                "endpoint": "metrics",
+                "instance": "10.0.128.4:9103",
+                "job": "ovnkube-node",
+                "namespace": "openshift-ovn-kubernetes",
+                "openshift_io_alert_source": "platform",
+                "pod": "ovnkube-node-89jp7",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "ovn-kubernetes-node",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "OVN Kubernetes failed to apply networking control plane configuration after several attempts. This might be because the configuration\nprovided by the user is invalid or because of an internal error. As a consequence, the cluster might have a degraded status.\n",
+                "summary": "OVN Kubernetes failed to apply networking control plane configuration."
+            },
+            "startsAt": "2025-02-28T12:12:42.448Z",
+            "endsAt": "2025-02-28T12:25:42.448Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=increase%28ovnkube_resource_retry_failures_total%5B10m%5D%29+%3E+0&g0.tab=1",
+            "fingerprint": "779fc9c77a733993"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "TargetDown",
+                "job": "ovnkube-node",
+                "namespace": "openshift-ovn-kubernetes",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "ovn-kubernetes-node",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "33.33% of the ovnkube-node/ovn-kubernetes-node targets in openshift-ovn-kubernetes namespace have been unreachable for more than 15 minutes. This may be a symptom of network connectivity issues, down nodes, or failures within these components. Assess the health of the infrastructure and nodes running these targets and then contact support.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/TargetDown.md",
+                "summary": "Some targets were not reachable from the monitoring server for an extended period of time."
+            },
+            "startsAt": "2025-02-28T12:12:19.03Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=100+%2A+%28%281+-+sum+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29%29+or+%28count+by+%28job%2C+namespace%2C+service%29+%28up+%3D%3D+0%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up%29%29%29+%3E+10&g0.tab=1",
+            "fingerprint": "7b41c86fa6470ddb"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-ovn-kubernetes"
+    },
+    "commonLabels": {
+        "namespace": "openshift-ovn-kubernetes",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "severity": "warning"
+    },
+    "commonAnnotations": {},
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-ovn-kubernetes\"}",
+    "truncatedAlerts": 0
+}

@@ -1,0 +1,50 @@
+{
+    "receiver": "Critical",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "etcdMembersDown",
+                "job": "etcd",
+                "namespace": "openshift-etcd",
+                "openshift_io_alert_source": "platform",
+                "pod": "etcd-ocp-qp6kr-master-0.c.openenv-6b9cz.internal",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "etcd",
+                "severity": "critical"
+            },
+            "annotations": {
+                "description": "etcd cluster \"etcd\": members are down (1).",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-etcd-operator/etcdMembersDown.md",
+                "summary": "etcd cluster members are down."
+            },
+            "startsAt": "2025-02-28T12:07:18.848Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+without+%28endpoint%29+%28sum+without+%28instance%29+%28up%7Bjob%3D~%22.%2Aetcd.%2A%22%7D+%3D%3D+bool+0%29+or+count+without+%28To%29+%28sum+without+%28instance%29+%28rate%28etcd_network_peer_sent_failures_total%7Bjob%3D~%22.%2Aetcd.%2A%22%7D%5B2m%5D%29%29+%3E+0.01%29%29+%3E+0&g0.tab=1",
+            "fingerprint": "358da7c2a5234c43"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-etcd"
+    },
+    "commonLabels": {
+        "alertname": "etcdMembersDown",
+        "job": "etcd",
+        "namespace": "openshift-etcd",
+        "openshift_io_alert_source": "platform",
+        "pod": "etcd-ocp-qp6kr-master-0.c.openenv-6b9cz.internal",
+        "prometheus": "openshift-monitoring/k8s",
+        "service": "etcd",
+        "severity": "critical"
+    },
+    "commonAnnotations": {
+        "description": "etcd cluster \"etcd\": members are down (1).",
+        "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-etcd-operator/etcdMembersDown.md",
+        "summary": "etcd cluster members are down."
+    },
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}/{severity=\"critical\"}:{namespace=\"openshift-etcd\"}",
+    "truncatedAlerts": 0
+}

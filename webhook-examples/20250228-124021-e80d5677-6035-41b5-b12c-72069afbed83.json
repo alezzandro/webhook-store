@@ -1,0 +1,129 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "ClusterOperatorDegraded",
+                "name": "etcd",
+                "namespace": "openshift-cluster-version",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "reason": "EtcdEndpoints_ErrorUpdatingEtcdEndpoints::EtcdMembers_UnhealthyMembers::NodeController_MasterNodesReady",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The etcd operator is degraded because EtcdEndpoints_ErrorUpdatingEtcdEndpoints::EtcdMembers_UnhealthyMembers::NodeController_MasterNodesReady, and the components it manages may have reduced quality of service.  Cluster upgrades may not complete. For more information refer to 'oc get -o yaml clusteroperator etcd' or https://console-openshift-console.apps.ocp.example.com/settings/cluster/.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/ClusterOperatorDegraded.md",
+                "summary": "Cluster operator has been degraded for 30 minutes."
+            },
+            "startsAt": "2025-02-28T12:30:06.671Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+name%2C+reason%29+%28%28cluster_operator_conditions%7Bcondition%3D%22Degraded%22%2Cjob%3D%22cluster-version-operator%22%2Cname%21%3D%22version%22%7D+or+on+%28namespace%2C+name%29+cluster_operator_conditions%7Bcondition%3D%22Failing%22%2Cjob%3D%22cluster-version-operator%22%2Cname%3D%22version%22%7D+or+on+%28namespace%2C+name%29+group+by+%28namespace%2C+name%29+%28cluster_operator_up%7Bjob%3D%22cluster-version-operator%22%7D%29%29+%3D%3D+1%29&g0.tab=1",
+            "fingerprint": "349ababbcfb7bce3"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "ClusterOperatorDegraded",
+                "name": "kube-apiserver",
+                "namespace": "openshift-cluster-version",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "reason": "NodeController_MasterNodesReady",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The kube-apiserver operator is degraded because NodeController_MasterNodesReady, and the components it manages may have reduced quality of service.  Cluster upgrades may not complete. For more information refer to 'oc get -o yaml clusteroperator kube-apiserver' or https://console-openshift-console.apps.ocp.example.com/settings/cluster/.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/ClusterOperatorDegraded.md",
+                "summary": "Cluster operator has been degraded for 30 minutes."
+            },
+            "startsAt": "2025-02-28T12:29:36.671Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+name%2C+reason%29+%28%28cluster_operator_conditions%7Bcondition%3D%22Degraded%22%2Cjob%3D%22cluster-version-operator%22%2Cname%21%3D%22version%22%7D+or+on+%28namespace%2C+name%29+cluster_operator_conditions%7Bcondition%3D%22Failing%22%2Cjob%3D%22cluster-version-operator%22%2Cname%3D%22version%22%7D+or+on+%28namespace%2C+name%29+group+by+%28namespace%2C+name%29+%28cluster_operator_up%7Bjob%3D%22cluster-version-operator%22%7D%29%29+%3D%3D+1%29&g0.tab=1",
+            "fingerprint": "f3c2ae4fe5b0050e"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "ClusterOperatorDegraded",
+                "name": "kube-controller-manager",
+                "namespace": "openshift-cluster-version",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "reason": "NodeController_MasterNodesReady",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The kube-controller-manager operator is degraded because NodeController_MasterNodesReady, and the components it manages may have reduced quality of service.  Cluster upgrades may not complete. For more information refer to 'oc get -o yaml clusteroperator kube-controller-manager' or https://console-openshift-console.apps.ocp.example.com/settings/cluster/.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/ClusterOperatorDegraded.md",
+                "summary": "Cluster operator has been degraded for 30 minutes."
+            },
+            "startsAt": "2025-02-28T12:29:36.671Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+name%2C+reason%29+%28%28cluster_operator_conditions%7Bcondition%3D%22Degraded%22%2Cjob%3D%22cluster-version-operator%22%2Cname%21%3D%22version%22%7D+or+on+%28namespace%2C+name%29+cluster_operator_conditions%7Bcondition%3D%22Failing%22%2Cjob%3D%22cluster-version-operator%22%2Cname%3D%22version%22%7D+or+on+%28namespace%2C+name%29+group+by+%28namespace%2C+name%29+%28cluster_operator_up%7Bjob%3D%22cluster-version-operator%22%7D%29%29+%3D%3D+1%29&g0.tab=1",
+            "fingerprint": "38775a8fcdaaaf37"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "ClusterOperatorDegraded",
+                "name": "kube-scheduler",
+                "namespace": "openshift-cluster-version",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "reason": "NodeController_MasterNodesReady",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The kube-scheduler operator is degraded because NodeController_MasterNodesReady, and the components it manages may have reduced quality of service.  Cluster upgrades may not complete. For more information refer to 'oc get -o yaml clusteroperator kube-scheduler' or https://console-openshift-console.apps.ocp.example.com/settings/cluster/.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/ClusterOperatorDegraded.md",
+                "summary": "Cluster operator has been degraded for 30 minutes."
+            },
+            "startsAt": "2025-02-28T12:29:36.671Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+name%2C+reason%29+%28%28cluster_operator_conditions%7Bcondition%3D%22Degraded%22%2Cjob%3D%22cluster-version-operator%22%2Cname%21%3D%22version%22%7D+or+on+%28namespace%2C+name%29+cluster_operator_conditions%7Bcondition%3D%22Failing%22%2Cjob%3D%22cluster-version-operator%22%2Cname%3D%22version%22%7D+or+on+%28namespace%2C+name%29+group+by+%28namespace%2C+name%29+%28cluster_operator_up%7Bjob%3D%22cluster-version-operator%22%7D%29%29+%3D%3D+1%29&g0.tab=1",
+            "fingerprint": "99e2f7f1ea7901b8"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "ClusterOperatorDegraded",
+                "name": "machine-config",
+                "namespace": "openshift-cluster-version",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "reason": "MachineConfigDaemonFailed",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The machine-config operator is degraded because MachineConfigDaemonFailed, and the components it manages may have reduced quality of service.  Cluster upgrades may not complete. For more information refer to 'oc get -o yaml clusteroperator machine-config' or https://console-openshift-console.apps.ocp.example.com/settings/cluster/.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/ClusterOperatorDegraded.md",
+                "summary": "Cluster operator has been degraded for 30 minutes."
+            },
+            "startsAt": "2025-02-28T12:37:36.671Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+name%2C+reason%29+%28%28cluster_operator_conditions%7Bcondition%3D%22Degraded%22%2Cjob%3D%22cluster-version-operator%22%2Cname%21%3D%22version%22%7D+or+on+%28namespace%2C+name%29+cluster_operator_conditions%7Bcondition%3D%22Failing%22%2Cjob%3D%22cluster-version-operator%22%2Cname%3D%22version%22%7D+or+on+%28namespace%2C+name%29+group+by+%28namespace%2C+name%29+%28cluster_operator_up%7Bjob%3D%22cluster-version-operator%22%7D%29%29+%3D%3D+1%29&g0.tab=1",
+            "fingerprint": "4a2bd71a8b54b3c2"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-cluster-version"
+    },
+    "commonLabels": {
+        "alertname": "ClusterOperatorDegraded",
+        "namespace": "openshift-cluster-version",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "severity": "warning"
+    },
+    "commonAnnotations": {
+        "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/ClusterOperatorDegraded.md",
+        "summary": "Cluster operator has been degraded for 30 minutes."
+    },
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-cluster-version\"}",
+    "truncatedAlerts": 0
+}

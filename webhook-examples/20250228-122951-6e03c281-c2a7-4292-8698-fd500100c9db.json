@@ -1,0 +1,67 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "TargetDown",
+                "job": "crio",
+                "namespace": "kube-system",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kubelet",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "33.33% of the crio/kubelet targets in kube-system namespace have been unreachable for more than 15 minutes. This may be a symptom of network connectivity issues, down nodes, or failures within these components. Assess the health of the infrastructure and nodes running these targets and then contact support.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/TargetDown.md",
+                "summary": "Some targets were not reachable from the monitoring server for an extended period of time."
+            },
+            "startsAt": "2025-02-28T12:11:49.03Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=100+%2A+%28%281+-+sum+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29%29+or+%28count+by+%28job%2C+namespace%2C+service%29+%28up+%3D%3D+0%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up%29%29%29+%3E+10&g0.tab=1",
+            "fingerprint": "62d34cf68913612c"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "TargetDown",
+                "job": "kubelet",
+                "namespace": "kube-system",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kubelet",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "33.33% of the kubelet/kubelet targets in kube-system namespace have been unreachable for more than 15 minutes. This may be a symptom of network connectivity issues, down nodes, or failures within these components. Assess the health of the infrastructure and nodes running these targets and then contact support.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/TargetDown.md",
+                "summary": "Some targets were not reachable from the monitoring server for an extended period of time."
+            },
+            "startsAt": "2025-02-28T12:11:49.03Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=100+%2A+%28%281+-+sum+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29%29+or+%28count+by+%28job%2C+namespace%2C+service%29+%28up+%3D%3D+0%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up%29%29%29+%3E+10&g0.tab=1",
+            "fingerprint": "7c0ef0f3f196a603"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "kube-system"
+    },
+    "commonLabels": {
+        "alertname": "TargetDown",
+        "namespace": "kube-system",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "service": "kubelet",
+        "severity": "warning"
+    },
+    "commonAnnotations": {
+        "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/TargetDown.md",
+        "summary": "Some targets were not reachable from the monitoring server for an extended period of time."
+    },
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"kube-system\"}",
+    "truncatedAlerts": 0
+}

@@ -1,0 +1,216 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "AlertmanagerFailedToSendAlerts",
+                "container": "kube-rbac-proxy-metric",
+                "endpoint": "metrics",
+                "instance": "10.129.2.15:9097",
+                "integration": "webhook",
+                "job": "alertmanager-main",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "pod": "alertmanager-main-0",
+                "prometheus": "openshift-monitoring/k8s",
+                "reason": "clientError",
+                "service": "alertmanager-main",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "Alertmanager openshift-monitoring/alertmanager-main-0 failed to send 100% of notifications to webhook.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/AlertmanagerFailedToSendAlerts.md",
+                "summary": "An Alertmanager instance failed to send notifications."
+            },
+            "startsAt": "2025-02-28T12:10:56.808Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28rate%28alertmanager_notifications_failed_total%7Bjob%3D~%22alertmanager-main%7Calertmanager-user-workload%22%7D%5B5m%5D%29+%2F+ignoring+%28reason%29+group_left+%28%29+rate%28alertmanager_notifications_total%7Bjob%3D~%22alertmanager-main%7Calertmanager-user-workload%22%7D%5B5m%5D%29%29+%3E+0.01&g0.tab=1",
+            "fingerprint": "432ea3d7f79c5c9f"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeStatefulSetReplicasMismatch",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "statefulset": "alertmanager-main"
+            },
+            "annotations": {
+                "description": "StatefulSet openshift-monitoring/alertmanager-main has not matched the expected number of replicas for longer than 15 minutes.",
+                "summary": "StatefulSet has not matched the expected number of replicas."
+            },
+            "startsAt": "2025-02-28T12:21:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_statefulset_status_replicas_ready%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_statefulset_status_replicas%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+and+%28changes%28kube_statefulset_status_replicas_updated%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B10m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "064e1e7abf8b41c9"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeStatefulSetReplicasMismatch",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "statefulset": "prometheus-k8s"
+            },
+            "annotations": {
+                "description": "StatefulSet openshift-monitoring/prometheus-k8s has not matched the expected number of replicas for longer than 15 minutes.",
+                "summary": "StatefulSet has not matched the expected number of replicas."
+            },
+            "startsAt": "2025-02-28T12:21:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_statefulset_status_replicas_ready%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_statefulset_status_replicas%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+and+%28changes%28kube_statefulset_status_replicas_updated%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B10m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "29930138bd84cb83"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeNotReady",
+                "condition": "Ready",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "status": "true"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal has been unready for more than 15 minutes.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/KubeNodeNotReady.md",
+                "summary": "Node is not ready."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_node_status_condition%7Bcondition%3D%22Ready%22%2Cjob%3D%22kube-state-metrics%22%2Cstatus%3D%22true%22%7D+%3D%3D+0&g0.tab=1",
+            "fingerprint": "f9662c346af922ae"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeNotReady",
+                "condition": "Ready",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "status": "true"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal has been unready for more than 15 minutes.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/KubeNodeNotReady.md",
+                "summary": "Node is not ready."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_node_status_condition%7Bcondition%3D%22Ready%22%2Cjob%3D%22kube-state-metrics%22%2Cstatus%3D%22true%22%7D+%3D%3D+0&g0.tab=1",
+            "fingerprint": "6522bd8f0daae355"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeUnreachable",
+                "container": "kube-rbac-proxy-main",
+                "effect": "NoSchedule",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "key": "node.kubernetes.io/unreachable",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal is unreachable and some workloads may be rescheduled.",
+                "summary": "Node is unreachable."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_node_spec_taint%7Beffect%3D%22NoSchedule%22%2Cjob%3D%22kube-state-metrics%22%2Ckey%3D%22node.kubernetes.io%2Funreachable%22%7D+unless+ignoring+%28key%2C+value%29+kube_node_spec_taint%7Bjob%3D%22kube-state-metrics%22%2Ckey%3D~%22ToBeDeletedByClusterAutoscaler%7Ccloud.google.com%2Fimpending-node-termination%7Caws-node-termination-handler%2Fspot-itn%22%7D%29+%3D%3D+1&g0.tab=1",
+            "fingerprint": "03f202a00b5eb0bd"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeUnreachable",
+                "container": "kube-rbac-proxy-main",
+                "effect": "NoSchedule",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "key": "node.kubernetes.io/unreachable",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal is unreachable and some workloads may be rescheduled.",
+                "summary": "Node is unreachable."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_node_spec_taint%7Beffect%3D%22NoSchedule%22%2Cjob%3D%22kube-state-metrics%22%2Ckey%3D%22node.kubernetes.io%2Funreachable%22%7D+unless+ignoring+%28key%2C+value%29+kube_node_spec_taint%7Bjob%3D%22kube-state-metrics%22%2Ckey%3D~%22ToBeDeletedByClusterAutoscaler%7Ccloud.google.com%2Fimpending-node-termination%7Caws-node-termination-handler%2Fspot-itn%22%7D%29+%3D%3D+1&g0.tab=1",
+            "fingerprint": "60cdb7d61e44cf86"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "TargetDown",
+                "job": "node-exporter",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "node-exporter",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "33.33% of the node-exporter/node-exporter targets in openshift-monitoring namespace have been unreachable for more than 15 minutes. This may be a symptom of network connectivity issues, down nodes, or failures within these components. Assess the health of the infrastructure and nodes running these targets and then contact support.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/TargetDown.md",
+                "summary": "Some targets were not reachable from the monitoring server for an extended period of time."
+            },
+            "startsAt": "2025-02-28T12:11:49.03Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=100+%2A+%28%281+-+sum+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29%29+or+%28count+by+%28job%2C+namespace%2C+service%29+%28up+%3D%3D+0%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up%29%29%29+%3E+10&g0.tab=1",
+            "fingerprint": "93ef85b75faa3a5b"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-monitoring"
+    },
+    "commonLabels": {
+        "namespace": "openshift-monitoring",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "severity": "warning"
+    },
+    "commonAnnotations": {},
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-monitoring\"}",
+    "truncatedAlerts": 0
+}

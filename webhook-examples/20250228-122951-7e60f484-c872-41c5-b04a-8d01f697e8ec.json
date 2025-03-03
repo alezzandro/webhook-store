@@ -1,0 +1,52 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeDaemonSetMisScheduled",
+                "container": "kube-rbac-proxy-main",
+                "daemonset": "machine-config-server",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-machine-config-operator",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "1 Pods of DaemonSet openshift-machine-config-operator/machine-config-server are running where they are not supposed to run.",
+                "summary": "DaemonSet pods are misscheduled."
+            },
+            "startsAt": "2025-02-28T12:18:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_daemonset_status_number_misscheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%3E+0&g0.tab=1",
+            "fingerprint": "28d252450f6db5ea"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-machine-config-operator"
+    },
+    "commonLabels": {
+        "alertname": "KubeDaemonSetMisScheduled",
+        "container": "kube-rbac-proxy-main",
+        "daemonset": "machine-config-server",
+        "endpoint": "https-main",
+        "job": "kube-state-metrics",
+        "namespace": "openshift-machine-config-operator",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "service": "kube-state-metrics",
+        "severity": "warning"
+    },
+    "commonAnnotations": {
+        "description": "1 Pods of DaemonSet openshift-machine-config-operator/machine-config-server are running where they are not supposed to run.",
+        "summary": "DaemonSet pods are misscheduled."
+    },
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-machine-config-operator\"}",
+    "truncatedAlerts": 0
+}

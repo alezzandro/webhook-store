@@ -1,0 +1,54 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubePodNotScheduled",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-route-controller-manager",
+                "openshift_io_alert_source": "platform",
+                "pod": "route-controller-manager-5d9ff46d66-62wnr",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "uid": "ee992755-1b0c-4dd4-b29f-ba9612bd382f"
+            },
+            "annotations": {
+                "description": "Pod openshift-route-controller-manager/route-controller-manager-5d9ff46d66-62wnr cannot be scheduled for more than 30 minutes.\nCheck the details of the pod with the following command:\noc describe -n openshift-route-controller-manager pod route-controller-manager-5d9ff46d66-62wnr",
+                "summary": "Pod cannot be scheduled."
+            },
+            "startsAt": "2025-02-28T12:33:34.816Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=last_over_time%28kube_pod_status_unschedulable%7Bnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B5m%5D%29+%3D%3D+1&g0.tab=1",
+            "fingerprint": "2edbadb94df83c5e"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-route-controller-manager"
+    },
+    "commonLabels": {
+        "alertname": "KubePodNotScheduled",
+        "container": "kube-rbac-proxy-main",
+        "endpoint": "https-main",
+        "job": "kube-state-metrics",
+        "namespace": "openshift-route-controller-manager",
+        "openshift_io_alert_source": "platform",
+        "pod": "route-controller-manager-5d9ff46d66-62wnr",
+        "prometheus": "openshift-monitoring/k8s",
+        "service": "kube-state-metrics",
+        "severity": "warning",
+        "uid": "ee992755-1b0c-4dd4-b29f-ba9612bd382f"
+    },
+    "commonAnnotations": {
+        "description": "Pod openshift-route-controller-manager/route-controller-manager-5d9ff46d66-62wnr cannot be scheduled for more than 30 minutes.\nCheck the details of the pod with the following command:\noc describe -n openshift-route-controller-manager pod route-controller-manager-5d9ff46d66-62wnr",
+        "summary": "Pod cannot be scheduled."
+    },
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-route-controller-manager\"}",
+    "truncatedAlerts": 0
+}

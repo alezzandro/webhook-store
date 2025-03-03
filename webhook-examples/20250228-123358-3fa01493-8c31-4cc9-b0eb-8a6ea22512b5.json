@@ -1,0 +1,97 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeDaemonSetRolloutStuck",
+                "container": "kube-rbac-proxy-main",
+                "daemonset": "tuned",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-cluster-node-tuning-operator",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "DaemonSet openshift-cluster-node-tuning-operator/tuned has not finished or progressed for at least 30 minutes.",
+                "summary": "DaemonSet rollout is stuck."
+            },
+            "startsAt": "2025-02-28T12:33:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28%28kube_daemonset_status_current_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+or+%28kube_daemonset_status_number_misscheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+0%29+or+%28kube_daemonset_status_updated_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+or+%28kube_daemonset_status_number_available%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29%29+and+%28changes%28kube_daemonset_status_updated_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B5m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "14a2648d3187ea28"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "NTOPodsNotReady",
+                "condition": "true",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-cluster-node-tuning-operator",
+                "openshift_io_alert_source": "platform",
+                "pod": "tuned-fqdh2",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "uid": "cc4d8196-abc1-46dd-9f4f-96f68dafe9c3"
+            },
+            "annotations": {
+                "description": "Pod tuned-fqdh2 is not ready.\nReview the \"Event\" objects in \"openshift-cluster-node-tuning-operator\" namespace for further details.\n",
+                "summary": "Pod tuned-fqdh2 is not ready."
+            },
+            "startsAt": "2025-02-28T12:33:41.279Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_pod_status_ready%7Bcondition%3D%22true%22%2Cnamespace%3D%22openshift-cluster-node-tuning-operator%22%7D+%3D%3D+0&g0.tab=1",
+            "fingerprint": "5379c64462e73c3d"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "NTOPodsNotReady",
+                "condition": "true",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-cluster-node-tuning-operator",
+                "openshift_io_alert_source": "platform",
+                "pod": "tuned-pq8xj",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "uid": "45d3cb7a-f6d2-4f37-9158-0809fde5a2c9"
+            },
+            "annotations": {
+                "description": "Pod tuned-pq8xj is not ready.\nReview the \"Event\" objects in \"openshift-cluster-node-tuning-operator\" namespace for further details.\n",
+                "summary": "Pod tuned-pq8xj is not ready."
+            },
+            "startsAt": "2025-02-28T12:33:41.279Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_pod_status_ready%7Bcondition%3D%22true%22%2Cnamespace%3D%22openshift-cluster-node-tuning-operator%22%7D+%3D%3D+0&g0.tab=1",
+            "fingerprint": "287e059d74852cd9"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-cluster-node-tuning-operator"
+    },
+    "commonLabels": {
+        "container": "kube-rbac-proxy-main",
+        "endpoint": "https-main",
+        "job": "kube-state-metrics",
+        "namespace": "openshift-cluster-node-tuning-operator",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "service": "kube-state-metrics",
+        "severity": "warning"
+    },
+    "commonAnnotations": {},
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-cluster-node-tuning-operator\"}",
+    "truncatedAlerts": 0
+}

@@ -1,0 +1,54 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubePodNotScheduled",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-apiserver",
+                "openshift_io_alert_source": "platform",
+                "pod": "apiserver-7c865948d6-76hbv",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "uid": "1d911b1b-01db-4a1d-ad09-434b4a609bec"
+            },
+            "annotations": {
+                "description": "Pod openshift-apiserver/apiserver-7c865948d6-76hbv cannot be scheduled for more than 30 minutes.\nCheck the details of the pod with the following command:\noc describe -n openshift-apiserver pod apiserver-7c865948d6-76hbv",
+                "summary": "Pod cannot be scheduled."
+            },
+            "startsAt": "2025-02-28T12:33:34.816Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=last_over_time%28kube_pod_status_unschedulable%7Bnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B5m%5D%29+%3D%3D+1&g0.tab=1",
+            "fingerprint": "9fe6ba6d325aa645"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-apiserver"
+    },
+    "commonLabels": {
+        "alertname": "KubePodNotScheduled",
+        "container": "kube-rbac-proxy-main",
+        "endpoint": "https-main",
+        "job": "kube-state-metrics",
+        "namespace": "openshift-apiserver",
+        "openshift_io_alert_source": "platform",
+        "pod": "apiserver-7c865948d6-76hbv",
+        "prometheus": "openshift-monitoring/k8s",
+        "service": "kube-state-metrics",
+        "severity": "warning",
+        "uid": "1d911b1b-01db-4a1d-ad09-434b4a609bec"
+    },
+    "commonAnnotations": {
+        "description": "Pod openshift-apiserver/apiserver-7c865948d6-76hbv cannot be scheduled for more than 30 minutes.\nCheck the details of the pod with the following command:\noc describe -n openshift-apiserver pod apiserver-7c865948d6-76hbv",
+        "summary": "Pod cannot be scheduled."
+    },
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-apiserver\"}",
+    "truncatedAlerts": 0
+}

@@ -29,3 +29,6 @@ Once deployed the containerized webhook receiver, we can navigate in our OpenShi
 
 ## Testing
 Finally you can test any alert you want, for getting some data you could try to shutdown one of the master and one of the worker nodes (in case you have enough machines to let the cluster survive the fault!).
+
+## Bonus
+You will find some real example webhooks in the ```/webhook-examples/``` directory!

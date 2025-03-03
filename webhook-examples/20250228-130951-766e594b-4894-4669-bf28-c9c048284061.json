@@ -1,0 +1,276 @@
+{
+    "receiver": "Default",
+    "status": "firing",
+    "alerts": [
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "ClusterMonitoringOperatorReconciliationErrors",
+                "container": "cluster-monitoring-operator",
+                "endpoint": "https",
+                "instance": "10.129.0.74:8443",
+                "job": "cluster-monitoring-operator",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "pod": "cluster-monitoring-operator-574f687cd9-269p7",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "cluster-monitoring-operator",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "Errors are occurring during reconciliation cycles. Inspect the cluster-monitoring-operator log for potential root causes.",
+                "summary": "Cluster Monitoring Operator is experiencing unexpected reconciliation errors."
+            },
+            "startsAt": "2025-02-28T13:07:34.816Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max_over_time%28cluster_monitoring_operator_last_reconciliation_successful%5B5m%5D%29+%3D%3D+0&g0.tab=1",
+            "fingerprint": "c612847ff4e33f37"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeDaemonSetRolloutStuck",
+                "container": "kube-rbac-proxy-main",
+                "daemonset": "node-exporter",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "DaemonSet openshift-monitoring/node-exporter has not finished or progressed for at least 30 minutes.",
+                "summary": "DaemonSet rollout is stuck."
+            },
+            "startsAt": "2025-02-28T12:33:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28%28kube_daemonset_status_current_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+or+%28kube_daemonset_status_number_misscheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+0%29+or+%28kube_daemonset_status_updated_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+or+%28kube_daemonset_status_number_available%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_daemonset_status_desired_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29%29+and+%28changes%28kube_daemonset_status_updated_number_scheduled%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B5m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "8c1330c2efd86b06"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeStatefulSetReplicasMismatch",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "statefulset": "alertmanager-main"
+            },
+            "annotations": {
+                "description": "StatefulSet openshift-monitoring/alertmanager-main has not matched the expected number of replicas for longer than 15 minutes.",
+                "summary": "StatefulSet has not matched the expected number of replicas."
+            },
+            "startsAt": "2025-02-28T12:21:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_statefulset_status_replicas_ready%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_statefulset_status_replicas%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+and+%28changes%28kube_statefulset_status_replicas_updated%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B10m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "064e1e7abf8b41c9"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeStatefulSetReplicasMismatch",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "statefulset": "prometheus-k8s"
+            },
+            "annotations": {
+                "description": "StatefulSet openshift-monitoring/prometheus-k8s has not matched the expected number of replicas for longer than 15 minutes.",
+                "summary": "StatefulSet has not matched the expected number of replicas."
+            },
+            "startsAt": "2025-02-28T12:21:28.463Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_statefulset_status_replicas_ready%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D+%21%3D+kube_statefulset_status_replicas%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%29+and+%28changes%28kube_statefulset_status_replicas_updated%7Bjob%3D%22kube-state-metrics%22%2Cnamespace%3D~%22%28openshift-.%2A%7Ckube-.%2A%7Cdefault%29%22%7D%5B10m%5D%29+%3D%3D+0%29&g0.tab=1",
+            "fingerprint": "29930138bd84cb83"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeNotReady",
+                "condition": "Ready",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "status": "true"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal has been unready for more than 15 minutes.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/KubeNodeNotReady.md",
+                "summary": "Node is not ready."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_node_status_condition%7Bcondition%3D%22Ready%22%2Cjob%3D%22kube-state-metrics%22%2Cstatus%3D%22true%22%7D+%3D%3D+0&g0.tab=1",
+            "fingerprint": "f9662c346af922ae"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeNotReady",
+                "condition": "Ready",
+                "container": "kube-rbac-proxy-main",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning",
+                "status": "true"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal has been unready for more than 15 minutes.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/KubeNodeNotReady.md",
+                "summary": "Node is not ready."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=kube_node_status_condition%7Bcondition%3D%22Ready%22%2Cjob%3D%22kube-state-metrics%22%2Cstatus%3D%22true%22%7D+%3D%3D+0&g0.tab=1",
+            "fingerprint": "6522bd8f0daae355"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeUnreachable",
+                "container": "kube-rbac-proxy-main",
+                "effect": "NoSchedule",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "key": "node.kubernetes.io/unreachable",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-master-0.c.openenv-6b9cz.internal is unreachable and some workloads may be rescheduled.",
+                "summary": "Node is unreachable."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_node_spec_taint%7Beffect%3D%22NoSchedule%22%2Cjob%3D%22kube-state-metrics%22%2Ckey%3D%22node.kubernetes.io%2Funreachable%22%7D+unless+ignoring+%28key%2C+value%29+kube_node_spec_taint%7Bjob%3D%22kube-state-metrics%22%2Ckey%3D~%22ToBeDeletedByClusterAutoscaler%7Ccloud.google.com%2Fimpending-node-termination%7Caws-node-termination-handler%2Fspot-itn%22%7D%29+%3D%3D+1&g0.tab=1",
+            "fingerprint": "03f202a00b5eb0bd"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "KubeNodeUnreachable",
+                "container": "kube-rbac-proxy-main",
+                "effect": "NoSchedule",
+                "endpoint": "https-main",
+                "job": "kube-state-metrics",
+                "key": "node.kubernetes.io/unreachable",
+                "namespace": "openshift-monitoring",
+                "node": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "kube-state-metrics",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "ocp-qp6kr-worker-a-lvv9z.c.openenv-6b9cz.internal is unreachable and some workloads may be rescheduled.",
+                "summary": "Node is unreachable."
+            },
+            "startsAt": "2025-02-28T12:18:40.138Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=%28kube_node_spec_taint%7Beffect%3D%22NoSchedule%22%2Cjob%3D%22kube-state-metrics%22%2Ckey%3D%22node.kubernetes.io%2Funreachable%22%7D+unless+ignoring+%28key%2C+value%29+kube_node_spec_taint%7Bjob%3D%22kube-state-metrics%22%2Ckey%3D~%22ToBeDeletedByClusterAutoscaler%7Ccloud.google.com%2Fimpending-node-termination%7Caws-node-termination-handler%2Fspot-itn%22%7D%29+%3D%3D+1&g0.tab=1",
+            "fingerprint": "60cdb7d61e44cf86"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "TargetDown",
+                "job": "node-exporter",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "prometheus": "openshift-monitoring/k8s",
+                "service": "node-exporter",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "33.33% of the node-exporter/node-exporter targets in openshift-monitoring namespace have been unreachable for more than 15 minutes. This may be a symptom of network connectivity issues, down nodes, or failures within these components. Assess the health of the infrastructure and nodes running these targets and then contact support.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-monitoring-operator/TargetDown.md",
+                "summary": "Some targets were not reachable from the monitoring server for an extended period of time."
+            },
+            "startsAt": "2025-02-28T12:11:49.03Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=100+%2A+%28%281+-+sum+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up+and+on+%28namespace%2C+pod%29+kube_pod_info%29%29+or+%28count+by+%28job%2C+namespace%2C+service%29+%28up+%3D%3D+0%29+%2F+count+by+%28job%2C+namespace%2C+service%29+%28up%29%29%29+%3E+10&g0.tab=1",
+            "fingerprint": "93ef85b75faa3a5b"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "PodDisruptionBudgetAtLimit",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "poddisruptionbudget": "alertmanager-main",
+                "prometheus": "openshift-monitoring/k8s",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The pod disruption budget is at the minimum disruptions allowed level. The number of current healthy pods is equal to the desired healthy pods.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-kube-controller-manager-operator/PodDisruptionBudgetAtLimit.md",
+                "summary": "The pod disruption budget is preventing further disruption to pods."
+            },
+            "startsAt": "2025-02-28T13:03:38.191Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+poddisruptionbudget%29+%28kube_poddisruptionbudget_status_current_healthy+%3D%3D+kube_poddisruptionbudget_status_desired_healthy+and+on+%28namespace%2C+poddisruptionbudget%29+kube_poddisruptionbudget_status_expected_pods+%3E+0%29&g0.tab=1",
+            "fingerprint": "f3c7a4d173f7cecd"
+        },
+        {
+            "status": "firing",
+            "labels": {
+                "alertname": "PodDisruptionBudgetAtLimit",
+                "namespace": "openshift-monitoring",
+                "openshift_io_alert_source": "platform",
+                "poddisruptionbudget": "prometheus-k8s",
+                "prometheus": "openshift-monitoring/k8s",
+                "severity": "warning"
+            },
+            "annotations": {
+                "description": "The pod disruption budget is at the minimum disruptions allowed level. The number of current healthy pods is equal to the desired healthy pods.",
+                "runbook_url": "https://github.com/openshift/runbooks/blob/master/alerts/cluster-kube-controller-manager-operator/PodDisruptionBudgetAtLimit.md",
+                "summary": "The pod disruption budget is preventing further disruption to pods."
+            },
+            "startsAt": "2025-02-28T13:03:38.191Z",
+            "endsAt": "0001-01-01T00:00:00Z",
+            "generatorURL": "https://console-openshift-console.apps.ocp.example.com/monitoring/graph?g0.expr=max+by+%28namespace%2C+poddisruptionbudget%29+%28kube_poddisruptionbudget_status_current_healthy+%3D%3D+kube_poddisruptionbudget_status_desired_healthy+and+on+%28namespace%2C+poddisruptionbudget%29+kube_poddisruptionbudget_status_expected_pods+%3E+0%29&g0.tab=1",
+            "fingerprint": "f8a1fe6916180c99"
+        }
+    ],
+    "groupLabels": {
+        "namespace": "openshift-monitoring"
+    },
+    "commonLabels": {
+        "namespace": "openshift-monitoring",
+        "openshift_io_alert_source": "platform",
+        "prometheus": "openshift-monitoring/k8s",
+        "severity": "warning"
+    },
+    "commonAnnotations": {},
+    "externalURL": "https://console-openshift-console.apps.ocp.example.com/monitoring",
+    "version": "4",
+    "groupKey": "{}:{namespace=\"openshift-monitoring\"}",
+    "truncatedAlerts": 0
+}
